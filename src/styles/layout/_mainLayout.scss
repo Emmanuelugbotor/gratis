@@ -1,0 +1,174 @@
+.main_layout{
+    position:relative;
+    overflow: hidden;
+    background: linear-gradient(to top, var(--main-second) 10%, var(--primary-color) );
+    &.after{
+        &::after{
+            content:'';
+            position:absolute;
+            left:0;
+            bottom:0;
+            width:100%;
+            height:100%;
+            background:rgba(255,255,255,.2);
+            backdrop-filter: blur(10px);
+            clip-path: ellipse(41% 24% at 49% 100%);
+            clip-path: circle(50% at bottom);
+            transform: translateY(53rem);
+            @media screen and (max-width:1905px){
+                transform: translateY(50rem);
+            }
+            @media screen and (max-width:1803px){
+                transform: translateY(45rem);
+            }
+            @media screen and (max-width:1662px){
+                transform: translateY(40rem);
+            }
+            @media screen and (max-width:1472px){
+                transform: translateY(37rem);
+            }
+            @media screen and (max-width:1344px){
+                transform: translateY(33rem);
+            }
+            @media screen and (max-width:1186px){
+                transform: translateY(30rem);
+            }
+            @media screen and (max-width:1061px){
+                transform: translateY(25rem);
+            }
+            @media screen and (max-width:891px){
+                transform: translateY(22rem);
+            }
+            @media screen and (max-width:769px){
+                transform: translateY(18rem);
+            }
+            @media screen and (max-width:536px){
+                transform: translateY(15rem);
+            }
+            @media screen and (max-width:480px){
+                display:none
+             }
+            // @media screen and (max-width:1196px){
+            //     transform: translateY(40rem);
+            // }
+        }
+    }
+    & main{
+        &.act{
+            &::after{
+                content:'';
+                width:100%;
+                height:100%;
+                position: absolute;
+                top:0;
+                left:0;
+                backdrop-filter: blur(10px);
+                z-index:11;
+                background-color: rgba(255,255,255,.15);
+            }
+        }
+    }
+    & .toggle_right{
+        position:absolute;
+        top:0;
+        left:50%;
+        width:100%;
+        height:100%;
+        color:white;
+        z-index:11;
+        background: linear-gradient(to top, var(--main-second) 10%, rgb(12, 12, 52) );
+        @media screen and (max-width:943px){
+            left:40%;
+        }
+        @media screen and (max-width:555px){
+            left:0%;
+        }
+        & > .wrapper{
+            max-width:50%;
+            width:100%;
+            padding:10rem 6rem 10rem 4rem;
+            @include Flex(stretch, center);
+            flex-direction:column;
+            @media screen and (max-width:943px){
+                max-width:60%;
+            }
+            @media screen and (max-width:555px){
+                max-width:100%
+            }
+            @media screen and (max-width:785px){
+                padding:10rem 2rem 10rem 2rem;
+            }
+            & > h1{
+                padding:0 2rem;
+                @media screen and (max-width:2032px){
+                    max-width:80rem;
+                    width:100%;
+                }
+                @media screen and (max-width:943px){
+                    line-height:1.4;
+                    font-size:3rem;
+                }
+            }
+            & form{
+                margin-top:2rem;
+                align-self: stretch;
+                & .input{
+                    @include Flex(stretch, stretch);
+                    flex-direction:column;
+                    margin-bottom:1.5rem;
+                    width:100%;
+                    & label{
+                        margin-bottom:1rem;
+                        font-size:1.4rem;
+                        font-weight:200;
+                    }
+                    & input{
+                        height:5.2rem;
+                        width:100%;
+                        padding:1rem 2rem;
+                        border-radius: 1rem ;
+                        border:none;
+                        outline: none;
+                    }
+                    & textarea{
+                        padding:1rem 2rem;
+                    }
+                }
+                & button{
+                    border:none;
+                    padding:1.5rem 3rem;
+                    background: var(--blue);
+                    color:var(--white);
+                    border-radius: 3rem;
+                    margin-top:2rem;
+                    font-size:1.6rem;
+                }
+               
+            }
+        }
+    }
+    & .handler{
+        position:absolute;
+        left:50%;
+        transform: translateX(-50%);
+        top:5rem;
+        width:7rem;
+        height:7rem;
+        cursor: pointer;
+        border-radius:50%;
+        @include Flex(center, center);
+        background:var(--white);
+        z-index:12;
+        @media screen and (max-width:943px){
+            left:40%;
+        }
+        @media screen and (max-width:555px){
+            top:1rem;
+            left:50%;
+        }
+        & > *{
+            font-size:2rem;
+        }
+    }
+
+}

@@ -1,0 +1,36 @@
+@mixin Flex($content:stretch, $items:stretch) {
+    display: flex;
+    justify-content: $content ;
+    align-items: $items;
+}
+@mixin PrimaryHeading($letter:.6rem){
+    font-family: var(--font-subheaders), serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: $letter;
+    color: var(--main);
+}
+@mixin secondaryHeading($color:#fff, $font: 5.8rem){
+    font-size: $font;
+    margin-bottom:3rem;
+    line-height: 1.15em;
+    font-family: var(--font-headers), serif;
+    font-weight: 700;
+    word-wrap: break-word;
+    color:$color;
+}
+@mixin paragraph($color:#fff){
+    font-size: 1.7rem;
+    line-height: 1.8em;
+    font-family: var(--font-main), sans-serif;
+    font-weight: 400;
+    margin-bottom: 4.2rem;
+    text-align: center;
+    color:$color;
+}
+@mixin Grid($gap:2rem, $space:30rem){
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax($space, 1fr));
+    gap:$gap;
+}

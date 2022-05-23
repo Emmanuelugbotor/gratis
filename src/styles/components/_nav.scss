@@ -1,0 +1,46 @@
+ header{
+    padding:2rem 10rem;
+    @include Flex(space-between, center);
+    width:100%;
+    @media screen and (max-width:860px){
+        padding:2rem 4rem;
+    }
+    @media screen and (max-width:604px){
+        padding:2rem;
+    }
+    & .logo{
+        @include Flex(stretch, center); 
+        flex-direction: column;
+        & .icon{
+            font-size: 3rem;
+            color:var(--iconColor);
+        }
+        & p{
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            color:var(--paraColor);
+        }
+    }
+    & nav{
+        & ul.navigation{
+            @include Flex(stretch, center);
+            & li{
+                padding:1rem 2rem;
+                font-size:1.1rem;
+                text-transform: uppercase;
+                color:var(--col);
+                cursor: pointer;
+                &:last-child{
+                    background:var(--bg);
+                    border-radius:2rem;
+                }
+                &:not(:last-child){
+                    margin-right:2rem;
+                    @media screen and (max-width:604px){
+                        margin-right:1rem;
+                    }
+                }
+            }
+        }
+    }
+}

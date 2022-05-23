@@ -1,0 +1,289 @@
+.blog{
+    width:100%;
+    & .top_header{
+        width:100%;
+        height:25rem;
+        position:relative;
+        background:linear-gradient(to right, var(--main-color), var(--main-second));
+        &::after{
+            position:absolute;
+            top:0;
+            left:0;
+            width:30%;
+            height:100%;
+            content:"";
+            background:rgba(255,255,255,.25);
+            backdrop-filter: blur(10px);
+            @media screen and (max-width:788px){
+                width:40%;
+            }
+        }
+        & > .wrapper{
+            position: absolute;
+            top:50%;
+            left:25%;
+            transform:translateY(-50%);
+            z-index:2;
+            color:var(--white);
+            @media screen and (max-width:788px){
+                left:35%;
+            }
+            & h1{
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                position: relative;
+                &::after{
+                    content:'';
+                    position:absolute;
+                    width:4rem;
+                    height:.1rem;
+                    background:var(--white);
+                    left:-5rem;
+                    top:50%;
+                    transform: translateY(-50%);
+                }
+            }
+            & > h2{
+                font-weight:200;
+                font-size: 3rem;
+                margin-top:1rem;
+            }
+        }
+    }
+    & .latest_wrapper{
+        margin-top:3.5rem;
+        padding:0 10rem;
+        @media screen and (max-width:922px){
+            padding:0 3rem;
+
+        }
+        & h1.latest{
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size:2.5rem;
+            margin-bottom:1rem;
+            @media screen and (max-width:754px){
+                text-align: center;   
+             }
+        }
+        & > .lorem_input{
+            @include Flex(space-between, flex-start);
+            @media screen and (max-width:754px){
+               flex-direction: column;   
+            }
+            & p{
+                flex:60%;
+                margin-right:10rem;
+                text-align: justify;
+                @media screen and (max-width:754px){
+                    margin-right:0rem;
+                    max-width:50rem;
+                    width:100%;
+                    margin:0 auto;
+                    margin-bottom:1rem; 
+                    flex:1;
+                     
+                 }
+                
+            }
+            & .input_field{
+                flex:40%;
+                border:1px solid #000;
+                border-radius:3rem;
+                overflow: hidden;
+                @include Flex(stretch, center);
+                padding:0 2rem;
+                height:4.5rem;
+                @media screen and (max-width:754px){
+                    flex:1;
+                    max-width:50rem;
+                    width:100%;
+                    margin: 0 auto;
+                     
+                 }
+                & input{
+                    width:100%;
+                    height:100%;
+                    flex:1;
+                    align-self: stretch;;
+                    position:relative;
+                    border:none;
+                    outline:none;
+                    background: transparent;
+                    &:focus{
+                        border:none;
+                    }
+
+                }
+                & .search{
+                    font-size:2rem;
+                }
+
+            }
+        }
+    }
+    & .cardBox{
+        max-width:110rem;
+        width:100%;
+        margin:0 auto;
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap:2rem;
+        margin-top:3rem;
+        padding:0 2rem;
+        & > .card{
+            box-shadow: .5rem .5rem 1rem rgba(0,0,0,.25);
+            padding:1.5rem;
+            & .top{
+                width:100%;
+                height:20rem;
+                & img{
+                    width:100%;
+                    height:100%;
+                    object-fit: cover;
+                }
+
+            }
+            & .bottom{
+                & p{
+                    font-size:1rem;
+                    color:grey;
+                    margin:1.5rem 0;
+                    text-transform: uppercase;
+                }
+                & h2,
+                & h3{
+                    font-size:1.7rem;
+                    line-height: 1;
+                    margin-bottom:1rem;
+                }
+                & > p.text{
+                    font-size:1.2rem;
+                    text-transform:inherit;
+                    line-height: 1.8;
+                }
+                & .readmore{
+                    @include Flex(stretch, center);
+                    & span{
+                        display: inline-block;
+                        width:4rem;
+                        height:.1rem;
+                        background: purple;
+                        margin-right:1rem;
+                    }
+                    & p{
+                        font-size:1.2rem;
+                        color:purple;
+                    }
+                }
+            }
+        }
+
+    }
+    & section.recent{
+        max-width:110rem;
+        width:100%;
+        margin:0 auto;
+        margin-top:4rem;
+        & h2{
+            font-size:3.5rem;
+            font-weight:400;
+            margin-bottom:1rem;
+             padding:0 2rem;
+             @media screen and (max-width:614px){
+                 text-align: center;
+             }
+        }
+        & p{
+            max-width:50rem;
+            width:100%;
+            font-size: 1.5rem;
+            margin-bottom:4rem;
+            padding:0 2rem;
+            @media screen and (max-width:614px){
+                max-width:55rem;
+                margin:0 auto;
+                margin-bottom:4rem;
+            }
+        }
+        & .button_centered{
+            @include Flex(center, stretch);
+            width:100%;
+            margin:5rem 0;
+        }
+        & button.load{
+            padding:1rem 4.5rem;
+            border-radius: 3rem;
+            background:purple;
+            color:var(--white);
+            border:none;
+            margin:0 auto;
+        }
+    }
+    & .bottom_design{
+        width:100%;
+        padding:5rem 10rem;
+        position:relative;
+        background:linear-gradient(to right, var(--main-color), var(--main-second));
+        @include Flex(space-between, center);
+        @media screen and (max-width:994px){
+            padding:5rem;
+        }
+        @media screen and (max-width:394px){
+            padding:5rem 2rem;
+        }
+        & .right{
+            max-width:40rem;
+            width: 100%;
+            height:20rem;
+            background:rgba(255,255,255,.25);
+            backdrop-filter: blur(10px);
+            padding-right:2rem;
+            z-index:1;
+            position: relative;
+            @include Flex(flex-end, center);
+            @media screen and (max-width:788px){
+                max-width:30rem;
+            }
+            @media screen and (max-width:658px){
+               display: none;
+            }
+            & .box{
+                height:40%;
+                width:15rem;
+                background:orangered;
+                position: relative;
+                filter:blur(10px);
+            }
+        }
+        & .left{
+            color:var(--white);
+            width:100%;
+            @media screen and (max-width:658px){
+                @include Flex(stretch, center);
+                flex-direction: column;
+             }
+            & > h2{
+                
+                @media screen and (max-width:658px){
+                    text-align: center;
+                 }
+            }
+            & > p{
+                color:grey;
+                margin-top:.5rem;
+                margin-bottom:1rem;
+                font-size: 1.4rem;
+                
+            }
+            & .indicator_contact{
+                @include Flex(stretch, center);
+                color:purple;
+                & .forward{
+                    margin-left:1rem;
+                }
+            }
+        }
+        
+    }
+}
