@@ -11,6 +11,7 @@ function App() {
     <React.Fragment>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/comingsoon" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/experiment" element={<Experiment />} />
